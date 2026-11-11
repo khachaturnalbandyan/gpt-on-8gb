@@ -1,0 +1,6 @@
+# versions used for the runs (Python 3.12, RTX 4060 Laptop GPU)
+torch==2.15.0
+bitsandbytes==0.50.2
+tiktoken==0.14.0
+datasets==5.1.0
+numpy==2.5.4

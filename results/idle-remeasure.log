@@ -1,0 +1,275 @@
+=== v1-shape ===
+ok     "block_size": 1024,
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0,
+    "gradient_checkpointing": false
+  },
+  "batch_size": 8,
+  "accumulation": 1,
+  "optimizer": "adamw",
+  "expandable_segments": false,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 30330240,
+  "status": "ok",
+  "tokens_per_sec": 54899,
+  "step_seconds": 0.149,
+  "stages_gib": {
+    "weights": 0.115,
+    "after_forward": 3.902,
+    "after_backward": 0.996,
+    "after_optimizer_step": 1.11
+  },
+  "peak_allocated_gib": 5.661,
+  "peak_reserved_gib": 7.018
+}
+
+=== small-50m ===
+oom y in use. Of the allocated memory 4.90 GiB is allocated by PyTorch, and 1.25 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+  "stages_gib": {
+    "weights": 0.193,
+    "after_forward": 4.513,
+    "after_backward": 1.159,
+    "after_optimizer_step": 1.344
+  },
+  "peak_allocated_gib": 6.046,
+  "peak_reserved_gib": 6.154
+}
+
+stopping: 1 failure(s) in a row
+=== baseline ===
+=== +expandable-segments ===
+=== +micro-batch-1-x8 ===
+=== +checkpointing ===
+=== +adamw8bit ===
+=== v1-shape ===
+ok  "block_size": 1024,
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 30330240,
+  "status": "ok",
+  "tokens_per_sec": 42446,
+  "step_seconds": 0.193,
+  "stages_gib": {
+    "weights": 0.113,
+    "after_forward": 0.543,
+    "after_backward": 0.322,
+    "after_optimizer_step": 0.266
+  },
+  "peak_allocated_gib": 0.906,
+  "peak_reserved_gib": 1.072
+}
+
+=== small-50m ===
+ok  "block_size": 1024,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_embd": 512,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 51459584,
+  "status": "ok",
+  "tokens_per_sec": 28448,
+  "step_seconds": 0.288,
+  "stages_gib": {
+    "weights": 0.192,
+    "after_forward": 0.642,
+    "after_backward": 0.479,
+    "after_optimizer_step": 0.385
+  },
+  "peak_allocated_gib": 1.123,
+  "peak_reserved_gib": 1.285
+}
+
+=== gpt2-small ===
+ok lock_size": 1024,
+    "n_layer": 12,
+    "n_head": 12,
+    "n_embd": 768,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 124402944,
+  "status": "ok",
+  "tokens_per_sec": 13801,
+  "step_seconds": 0.594,
+  "stages_gib": {
+    "weights": 0.463,
+    "after_forward": 0.958,
+    "after_backward": 1.023,
+    "after_optimizer_step": 0.795
+  },
+  "peak_allocated_gib": 1.912,
+  "peak_reserved_gib": 2.229
+}
+
+=== gpt2-medium ===
+ok "block_size": 1024,
+    "n_layer": 24,
+    "n_head": 16,
+    "n_embd": 1024,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 354724864,
+  "status": "ok",
+  "tokens_per_sec": 5122,
+  "step_seconds": 1.599,
+  "stages_gib": {
+    "weights": 1.321,
+    "after_forward": 1.9,
+    "after_backward": 2.739,
+    "after_optimizer_step": 2.089
+  },
+  "peak_allocated_gib": 4.552,
+  "peak_reserved_gib": 4.771
+}
+
+=== mid-24x1280 ===
+ok lock_size": 1024,
+    "n_layer": 24,
+    "n_head": 20,
+    "n_embd": 1280,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 537777920,
+  "status": "ok",
+  "tokens_per_sec": 3415,
+  "step_seconds": 2.399,
+  "stages_gib": {
+    "weights": 2.003,
+    "after_forward": 2.631,
+    "after_backward": 4.103,
+    "after_optimizer_step": 3.117
+  },
+  "peak_allocated_gib": 6.628,
+  "peak_reserved_gib": 7.033
+}
+
+=== mid-30x1280 ===
+oom ocated by PyTorch, and 97.50 MiB is reserved by PyTorch but unallocated. expandable_segments is enabled. If instead the process is running out of virtual address space (VSZ), expandable segments may be over-reserving VA (each segment reserves ~9/8 of device memory, times the number of streams); reduce it via PYTORCH_CUDA_ALLOC_CONF expandable_segments_reserve / expandable_segments_reserve_by_class.",
+  "stages_gib": {
+    "weights": 2.443,
+    "after_forward": 3.1,
+    "after_backward": 4.982,
+    "after_optimizer_step": 3.781
+  },
+  "peak_allocated_gib": 7.387,
+  "peak_reserved_gib": 7.467
+}
+
+=== gpt2-large ===
+oom allocated memory 7.32 GiB is allocated by PyTorch, and 146.43 MiB is reserved by PyTorch but unallocated. expandable_segments is enabled. If instead the process is running out of virtual address space (VSZ), expandable segments may be over-reserving VA (each segment reserves ~9/8 of device memory, times the number of streams); reduce it via PYTORCH_CUDA_ALLOC_CONF expandable_segments_reserve / expandable_segments_reserve_by_class.",
+  "stages_gib": {
+    "weights": 2.883,
+    "after_forward": 3.569,
+    "after_backward": 5.861
+  },
+  "peak_allocated_gib": 7.325,
+  "peak_reserved_gib": 7.467
+}
+
+stopping: 2 failure(s) in a row
+{
+  "name": "mid-26x1280",
+  "config": {
+    "vocab_size": 50257,
+    "block_size": 1024,
+    "n_layer": 26,
+    "n_head": 20,
+    "n_embd": 1280,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 577122560,
+  "status": "ok",
+  "tokens_per_sec": 3165,
+  "step_seconds": 2.588,
+  "stages_gib": {
+    "weights": 2.15,
+    "after_forward": 2.788,
+    "after_backward": 4.396,
+    "after_optimizer_step": 3.339
+  },
+  "peak_allocated_gib": 7.079,
+  "peak_reserved_gib": 7.406
+}
+[W1107 15:35:01.296120027 CUDACachingAllocator.cpp:623] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 12189696, total: 8184725504).
+[W1107 15:35:01.625413526 CUDACachingAllocator.cpp:623] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 12189696, total: 8184725504).
+[W1107 15:35:02.960621942 CUDACachingAllocator.cpp:623] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 12189696, total: 8184725504).
+[W1107 15:35:02.292879351 CUDACachingAllocator.cpp:623] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 12189696, total: 8184725504).
+[W1107 15:35:02.297347814 CUDACachingAllocator.cpp:623] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 12189696, total: 8184725504).
+{
+  "name": "mid-27x1280",
+  "config": {
+    "vocab_size": 50257,
+    "block_size": 1024,
+    "n_layer": 27,
+    "n_head": 20,
+    "n_embd": 1280,
+    "dropout": 0.0,
+    "gradient_checkpointing": true
+  },
+  "batch_size": 1,
+  "accumulation": 8,
+  "optimizer": "adamw8bit",
+  "expandable_segments": true,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_gib": 7.623,
+  "parameters": 596794880,
+  "status": "oom",
+  "error": "CUDA out of memory. Tried to allocate 198.00 MiB. GPU 0 has a total capacity of 7.62 GiB of which 191.62 MiB is free. Including non-PyTorch memory, this process has 7.42 GiB memory in use. Of the allocated memory 7.11 GiB is allocated by PyTorch, and 181.18 MiB is reserved by PyTorch but unallocated. expandable_segments is enabled. If instead the process is running out of virtual address space (VSZ), expandable segments may be over-reserving VA (each segment reserves ~9/8 of device memory, times the number of streams); reduce it via PYTORCH_CUDA_ALLOC_CONF expandable_segments_reserve / expandable_segments_reserve_by_class.",
+  "stages_gib": {
+    "weights": 2.223,
+    "after_forward": 2.866,
+    "after_backward": 4.542,
+    "after_optimizer_step": 3.449
+  },
+  "peak_allocated_gib": 7.304,
+  "peak_reserved_gib": 7.465
+}
+DONE

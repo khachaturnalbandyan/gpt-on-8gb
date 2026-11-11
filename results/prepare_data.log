@@ -1,0 +1,35 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+train.bin: 50,825,060 tokens
+train.bin: 100,458,271 tokens
+train.bin: 151,015,494 tokens
+train.bin: 200,698,543 tokens
+train.bin: 250,837,738 tokens
+train.bin: 300,897,513 tokens
+train.bin: 350,767,781 tokens
+train.bin: 400,401,286 tokens
+train.bin: 450,840,997 tokens
+train.bin: 500,399,181 tokens
+train.bin: 551,008,368 tokens
+train.bin: 600,064,513 tokens
+train.bin: 651,083,380 tokens
+train.bin: 700,431,411 tokens
+train.bin: 750,297,998 tokens
+train.bin: 800,767,197 tokens
+train.bin: 850,148,814 tokens
+train.bin: 900,021,257 tokens
+train.bin: 950,999,987 tokens
+train.bin: 1,000,000,000 tokens
+{
+  "dataset": "HuggingFaceFW/fineweb-edu/sample-10BT",
+  "tokenizer": "gpt2",
+  "vocab_size": 50257,
+  "train_tokens": 1000000000,
+  "val_tokens": 5000000
+}
+Fatal Python error: PyGILState_Release: thread state 0x7a5cf0003670 must be current when releasing
+Python runtime state: finalizing (tstate=0x00000000013d8048)
+
+Thread 0x00007a5dfa307780 (most recent call first):
+  <no Python frame>
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, charset_normalizer.md, charset_normalizer.cd, requests.packages.charset_normalizer.md, requests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd, pyarrow.lib, _cyutility, pandas._libs._cyutility, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.properties, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.groupby, pandas._libs.hashing, pandas._libs.arrays, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._pcg64, numpy.random._generator, numpy.random._mt19937, numpy.random._philox, numpy.random._sfc64, numpy.random.mtrand, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.indexing, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs._ujson, pandas._libs.parsers, pandas._libs.testing, pyarrow._acero, pyarrow._fs, pyarrow._csv, pyarrow._json, pyarrow._substrait, pyarrow._dataset, pyarrow._dataset_orc, pyarrow._parquet, pyarrow._azurefs, pyarrow._hdfs, pyarrow._gcsfs, pyarrow._s3fs, pyarrow._parquet_encryption, pyarrow._dataset_parquet_encryption, pyarrow._dataset_parquet, yaml._yaml, xxhash._xxhash, multidict._multidict, yarl._quoting_c, propcache._helpers_c, aiohttp._http_writer, aiohttp._http_parser, aiohttp._websocket.mask, aiohttp._websocket.reader_c, frozenlist._frozenlist, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, cuda.bindings._internal.utils, cuda.bindings._internal.driver, cuda.bindings.cydriver, cuda.bindings.driver, cuda.bindings._internal.runtime_ptds, cuda.bindings._internal.runtime, cuda.bindings.cyruntime, cuda.bindings.runtime (total: 105)

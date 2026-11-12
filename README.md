@@ -1,7 +1,8 @@
 # gpt-on-8gb
 
 What's the biggest GPT you can train on an 8 GB laptop GPU? This repo has the code and every measurement
-from the experiments, including a follow-up comparing a 6-hour and a 12-hour training run.
+from the experiments, including follow-ups comparing a 6-hour and a 12-hour training run, and a small model
+trained longer against a bigger model trained for the same time.
 
 Hardware: RTX 4060 Laptop GPU, 8 GB (PyTorch sees 7.62 GiB). bf16 autocast, fp32 weights,
 GPT-2 BPE tokenizer (50,257 tokens), 1,024-token context.
@@ -35,6 +36,35 @@ The same 124M setup as `night-124m`, trained from scratch with `--hours 12` (its
 - `runs/repro-124m-6h-partial/log.jsonl` is an earlier copy of the 6 h run with the same settings, stopped by a laptop
   shutdown after 3 h 39 min. Over its 14 evals it stays within 0.087 val loss of `night-124m`.
 - `results/temps-12h.csv` + `temp_guard_12h.sh`: GPU temperature during the 12 h run (avg 63.5 °C, max 67 °C).
+
+## Train longer or train bigger? (124M vs 355M, 12 h each)
+
+The 355M setup of `night-355m`, trained from scratch with `--hours 12`, against the 124M 12 h run above.
+
+| Run | Tokens read | tokens/s | Best / last val loss | File |
+|---|---|---|---|---|
+| 124M, 12 h (`night-124m-12h`) | 894M | 20,700 | 3.342 / 3.399 | `runs/night-124m-12h/log.jsonl` |
+| 355M, 12 h (`night-355m-12h`) | 290M | 6,724 | 3.539 / 3.584 | `runs/night-355m-12h/log.jsonl` |
+| 124M, 3.9 h (`night-124m-3.9h`) | 290M | 20,663 | 3.590 / 3.602 | `runs/night-124m-3.9h/log.jsonl` |
+
+- Same time budget: the 124M wins by 0.41 at 6 h (3.457 vs 3.864) and by 0.20 at 12 h (3.342 vs 3.539).
+  The extra 6 h gained the 355M 0.325 and the 124M 0.115. Single runs.
+- From hour 6 on, the gap (355M − 124M, every 15-min eval) moves between 0.09 and 0.28 with no trend.
+- `night-124m-3.9h` exists only to compare at the same text: its schedule ends at 290M tokens, like the 355M 12 h run.
+  Both finished: 3.602 vs 3.584 (last eval), inside the eval noise. Per token read, the two sizes are even here;
+  the 355M reads about a third as many tokens per hour.
+- Tokens read per parameter in 12 h: 124M 7.2, 355M 0.82 (Hoffmann et al. 2022's compute-optimal rule of thumb is ~20).
+- The 355M 12 h run used gradient checkpointing (peak 6.11 GiB) and ran without a pause.
+- `results/temps-355m-12h.csv` (avg 69.9 °C, max 74 °C, avg 83.1 W) and `results/temps-124m-3.9h.csv`
+  (avg 64.2 °C, max 67 °C), logged by `temp_guard_355m_12h.sh` / `temp_guard_124m_3.9h.sh`.
+
+```bash
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python train.py --name night-355m-12h \
+    --n-layer 24 --n-head 16 --n-embd 1024 --batch-size 4 --accumulation 2 --checkpointing \
+    --optimizer adamw8bit --lr 3e-4 --hours 12
+python train.py --name night-124m-3.9h --n-layer 12 --n-head 12 --n-embd 768 --batch-size 4 \
+    --accumulation 2 --optimizer adamw8bit --lr 6e-4 --hours 3.9
+```
 
 Notes on the files:
 - `*-idle.jsonl` and `idle-remeasure.log` are a later re-run. The memory numbers match the first runs; the speeds

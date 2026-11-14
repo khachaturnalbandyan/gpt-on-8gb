@@ -117,3 +117,50 @@ Related project: [tiny-gpt-armenian](https://github.com/khachaturnalbandyan/tiny
 ## License
 
 MIT, see `LICENSE`.
+
+## Chess from text alone (`chess/`)
+
+A character-level GPT trained only on chess moves written as text (`;1.e4 e5 2.Nf3 …`). It never sees a board,
+a rule or a legal-move list. Every hour of training is saved and tested.
+
+- Data: Lichess open database (CC0), January 2017. 10,680,708 games read, 1,545,603 kept (both players 1800+,
+  no bullet, at least 20 half-moves, no abandoned games): 649.6M training characters, 32-character alphabet.
+  `results/data-stats.json`, `results/data-meta.json`. The data is not redistributed; `prepare_chess.py` rebuilds it
+  (needs the `zstd` command).
+- Model: the GPT in `model.py`, 50,947,072 parameters (16 layers, 8 heads, 512 wide, 1,024-character context),
+  AdamW, lr 6e-4, warmup + cosine over 12 h (`train_chess.py`, imports `model.py`, `probe.py`, `train.py`).
+- 12 h run: 2.06B characters read (3.17 epochs), 47,601 characters/s, best val loss 0.3631, peak 5.69 GiB.
+  `runs/chess-50m-12h/log.jsonl`. Paused once after hour 9 and continued with `--resume` from that checkpoint.
+- Loss spike: val loss 0.4733 at 75 min → 3.0175 at 90 min (untrained 3.5286), back below 0.4733 by 195 min.
+  Likely cause: lr 6e-4 too high for 16 layers (not tested).
+- GPU temperature: avg 71.5 °C, max 78 °C during training (`results/temps-chess-50m-12h.csv`).
+
+### Legal moves, every hour
+
+`eval_legal.py`: 1,000 positions from held-out games (one random ply per game), the model writes the next move,
+python-chess checks it. First try only. `results/legal-chess-50m-12h-p1000.csv`.
+
+| Hour | 0 | 1 | 2 | 3 | 4 | 6 | 8 | 10 | 12 |
+|---|---|---|---|---|---|---|---|---|---|
+| Legal % | 0.2 | 85.5 | 71.4 | 87.7 | 90.4 | 94.5 | 96.2 | 96.9 | 98.0 |
+
+By game phase at hour 12: opening (ply < 20) 100.0 %, middle 98.5 %, late (ply 60+) 94.3 % (hour 1: 78.3 %).
+
+### Against Stockfish
+
+`play.py --elo` + `run_elo_matches.sh`: hour 12 against Stockfish 17.1 with `UCI_LimitStrength` / `UCI_Elo`,
+Stockfish on a 120 s + 1 s clock (the time its Elo setting is calibrated at), 100 games per level, colours
+alternating, sampling temperature 0.7. An illegal move gets 5 more tries; after 6 illegal tries the game is lost.
+`results/elo/chess-50m-12h-ckpt_h12/` (every game + `summary.json` from `elo_report.py`).
+
+| Stockfish UCI_Elo | Win | Draw | Loss | Score | Lost by no legal move |
+|---|---|---|---|---|---|
+| 1320 | 2 | 10 | 88 | 7.0 % | 17 |
+| 1500 | 3 | 7 | 90 | 6.5 % | 27 |
+| 1700 | 0 | 5 | 95 | 2.5 % | 28 |
+
+- Maximum-likelihood estimate over all 300 games: about 950 (standard error 45) on Stockfish's UCI_Elo scale, which is
+  itself anchored to CCRL Blitz only to about ±100. 950 is below the lowest setting (1320), so it is an extrapolation.
+- Losses: 201 by checkmate, 72 by no legal move. Draws: 21 by threefold repetition, 1 by insufficient material.
+
+Tests: `cd chess && python -m pytest` (22 tests, no GPU or Stockfish needed).

@@ -1,0 +1,38 @@
+{
+  "source": "lichess_db_standard_rated_2017-01.pgn.zst",
+  "filters": {
+    "min_elo_both": 1800,
+    "min_estimated_seconds": 180,
+    "min_plies": 20,
+    "dropped_terminations": [
+      "Abandoned",
+      "Rules infraction",
+      "Unterminated"
+    ]
+  },
+  "games_read": 10680708,
+  "games_kept": 1545603,
+  "rejected": {
+    "low_elo": 8223971,
+    "bullet_or_no_clock": 877587,
+    "bad_termination": 6838,
+    "too_short": 26709
+  },
+  "train_chars": 649577298,
+  "val_chars": 6535822,
+  "mean_plies_kept": 76.8,
+  "avg_elo_histogram": {
+    "1800": 442723,
+    "1900": 514612,
+    "2000": 315117,
+    "2100": 158606,
+    "2200": 74521,
+    "2300": 26050,
+    "2400": 9388,
+    "2500": 3634,
+    "2600": 691,
+    "2700": 201,
+    "2800": 60
+  },
+  "seconds": 403
+}

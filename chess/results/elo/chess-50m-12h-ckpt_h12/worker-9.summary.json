@@ -1,0 +1,34 @@
+{
+  "checkpoint": "runs/chess-50m-12h/ckpt_h12.pt",
+  "games_file": "results/elo/chess-50m-12h-ckpt_h12/worker-9.jsonl",
+  "sf_time": null,
+  "sf_clock": "120+1",
+  "per_level": {
+    "elo 1320": {
+      "win": 1,
+      "draw": 0,
+      "loss": 9,
+      "forfeits": 1,
+      "score": 0.1,
+      "elo_estimate": 938
+    },
+    "elo 1500": {
+      "win": 1,
+      "draw": 0,
+      "loss": 9,
+      "forfeits": 4,
+      "score": 0.1,
+      "elo_estimate": 1118
+    },
+    "elo 1700": {
+      "win": 0,
+      "draw": 1,
+      "loss": 9,
+      "forfeits": 5,
+      "score": 0.05,
+      "elo_estimate": 1188
+    }
+  },
+  "elo_estimate": 1037,
+  "elo_standard_error": 118
+}

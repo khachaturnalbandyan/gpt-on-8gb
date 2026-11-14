@@ -4,3 +4,4 @@ bitsandbytes==0.50.2
 tiktoken==0.14.0
 datasets==5.1.0
 numpy==2.5.4
+chess==1.11.2          # python-chess, for chess/ (Stockfish itself is installed separately)

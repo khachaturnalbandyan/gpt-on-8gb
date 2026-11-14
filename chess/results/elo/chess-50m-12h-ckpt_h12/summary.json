@@ -1,0 +1,72 @@
+{
+  "checkpoint": "runs/chess-50m-12h/ckpt_h12.pt",
+  "opponent": "elo",
+  "games": 300,
+  "sf_clock": "120+1",
+  "sf_time": null,
+  "per_level": {
+    "elo 1320": {
+      "win": 2,
+      "draw": 10,
+      "loss": 88,
+      "games": 100,
+      "forfeits": 17,
+      "score": 0.07,
+      "mean_plies": 71.0,
+      "as_white": {
+        "win": 1,
+        "draw": 6,
+        "loss": 43
+      },
+      "as_black": {
+        "win": 1,
+        "draw": 4,
+        "loss": 45
+      },
+      "elo_estimate": 871
+    },
+    "elo 1500": {
+      "win": 3,
+      "draw": 7,
+      "loss": 90,
+      "games": 100,
+      "forfeits": 27,
+      "score": 0.065,
+      "mean_plies": 69.3,
+      "as_white": {
+        "win": 2,
+        "draw": 4,
+        "loss": 44
+      },
+      "as_black": {
+        "win": 1,
+        "draw": 3,
+        "loss": 46
+      },
+      "elo_estimate": 1037
+    },
+    "elo 1700": {
+      "win": 0,
+      "draw": 5,
+      "loss": 95,
+      "games": 100,
+      "forfeits": 28,
+      "score": 0.025,
+      "mean_plies": 66.3,
+      "as_white": {
+        "win": 0,
+        "draw": 1,
+        "loss": 49
+      },
+      "as_black": {
+        "win": 0,
+        "draw": 4,
+        "loss": 46
+      },
+      "elo_estimate": 1064
+    }
+  },
+  "elo_estimate": 950,
+  "elo_standard_error": 45,
+  "elo_scale_note": "Stockfish UCI_Elo is anchored to CCRL Blitz only to about +-100 Elo"
+}

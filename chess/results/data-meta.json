@@ -1,0 +1,6 @@
+{
+  "vocab": " #+-.0123456789;=BKNOQRabcdefghx",
+  "vocab_size": 32,
+  "dtype": "uint16",
+  "game_start": ";"
+}

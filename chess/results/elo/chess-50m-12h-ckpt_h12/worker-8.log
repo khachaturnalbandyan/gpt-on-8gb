@@ -1,0 +1,64 @@
+elo 1320 game 0 white: loss (forfeit_illegal, 64 plies, 2 illegal turns)
+elo 1320 game 1 black: loss (forfeit_illegal, 51 plies, 1 illegal turns)
+elo 1320 game 2 white: draw (threefold_repetition, 151 plies, 3 illegal turns)
+elo 1320 game 3 black: loss (forfeit_illegal, 93 plies, 4 illegal turns)
+elo 1320 game 4 white: draw (threefold_repetition, 117 plies, 4 illegal turns)
+elo 1320 game 5 black: win (checkmate, 76 plies, 3 illegal turns)
+elo 1320 game 6 white: loss (checkmate, 92 plies, 0 illegal turns)
+elo 1320 game 7 black: loss (checkmate, 63 plies, 0 illegal turns)
+elo 1320 game 8 white: draw (threefold_repetition, 157 plies, 8 illegal turns)
+elo 1320 game 9 black: loss (checkmate, 87 plies, 3 illegal turns)
+elo 1500 game 0 white: loss (checkmate, 82 plies, 4 illegal turns)
+elo 1500 game 1 black: loss (checkmate, 49 plies, 5 illegal turns)
+elo 1500 game 2 white: loss (checkmate, 66 plies, 0 illegal turns)
+elo 1500 game 3 black: draw (threefold_repetition, 78 plies, 8 illegal turns)
+elo 1500 game 4 white: loss (checkmate, 56 plies, 0 illegal turns)
+elo 1500 game 5 black: loss (checkmate, 233 plies, 14 illegal turns)
+elo 1500 game 6 white: loss (checkmate, 38 plies, 0 illegal turns)
+elo 1500 game 7 black: loss (checkmate, 103 plies, 2 illegal turns)
+elo 1500 game 8 white: loss (checkmate, 46 plies, 1 illegal turns)
+elo 1500 game 9 black: loss (checkmate, 79 plies, 1 illegal turns)
+elo 1700 game 0 white: loss (checkmate, 90 plies, 2 illegal turns)
+elo 1700 game 1 black: loss (checkmate, 61 plies, 4 illegal turns)
+elo 1700 game 2 white: loss (checkmate, 128 plies, 4 illegal turns)
+elo 1700 game 3 black: loss (checkmate, 103 plies, 4 illegal turns)
+elo 1700 game 4 white: loss (checkmate, 88 plies, 2 illegal turns)
+elo 1700 game 5 black: draw (threefold_repetition, 122 plies, 10 illegal turns)
+elo 1700 game 6 white: loss (checkmate, 102 plies, 4 illegal turns)
+elo 1700 game 7 black: loss (checkmate, 61 plies, 1 illegal turns)
+elo 1700 game 8 white: loss (checkmate, 24 plies, 0 illegal turns)
+elo 1700 game 9 black: loss (checkmate, 49 plies, 3 illegal turns)
+{
+  "checkpoint": "runs/chess-50m-12h/ckpt_h12.pt",
+  "games_file": "results/elo/chess-50m-12h-ckpt_h12/worker-8.jsonl",
+  "sf_time": null,
+  "sf_clock": "120+1",
+  "per_level": {
+    "elo 1320": {
+      "win": 1,
+      "draw": 3,
+      "loss": 6,
+      "forfeits": 3,
+      "score": 0.25,
+      "elo_estimate": 1129
+    },
+    "elo 1500": {
+      "win": 0,
+      "draw": 1,
+      "loss": 9,
+      "forfeits": 0,
+      "score": 0.05,
+      "elo_estimate": 988
+    },
+    "elo 1700": {
+      "win": 0,
+      "draw": 1,
+      "loss": 9,
+      "forfeits": 0,
+      "score": 0.05,
+      "elo_estimate": 1188
+    }
+  },
+  "elo_estimate": 1105,
+  "elo_standard_error": 102
+}

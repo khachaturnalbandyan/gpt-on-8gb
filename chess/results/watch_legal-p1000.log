@@ -1,0 +1,41 @@
+2026-11-13_18:17 measuring runs/chess-50m-12h/ckpt_h00.pt
+{"checkpoint": "ckpt_h00.pt", "minutes": 0.0, "step": 0, "val_loss": 3.5286, "positions": 1000, "legal_pct": 0.2, "legal_pct_opening": 0.0, "positions_opening": 289, "legal_pct_middle": 0.4, "positions_middle": 481, "legal_pct_late": 0.0, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_18:29 measuring runs/chess-50m-12h/ckpt_h01.pt
+{"checkpoint": "ckpt_h01.pt", "minutes": 60.01, "step": 5238, "val_loss": 0.4941, "positions": 1000, "legal_pct": 85.5, "legal_pct_opening": 97.2, "positions_opening": 289, "legal_pct_middle": 81.9, "positions_middle": 481, "legal_pct_late": 78.3, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_18:36 measuring runs/chess-50m-12h/ckpt_h02.pt
+{"checkpoint": "ckpt_h02.pt", "minutes": 120.01, "step": 10476, "val_loss": 0.5996, "positions": 1000, "legal_pct": 71.4, "legal_pct_opening": 92.0, "positions_opening": 289, "legal_pct_middle": 64.7, "positions_middle": 481, "legal_pct_late": 59.6, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_18:43 measuring runs/chess-50m-12h/ckpt_h03.pt
+{"checkpoint": "ckpt_h03.pt", "minutes": 180.0, "step": 15713, "val_loss": 0.4771, "positions": 1000, "legal_pct": 87.7, "legal_pct_opening": 98.6, "positions_opening": 289, "legal_pct_middle": 84.4, "positions_middle": 481, "legal_pct_late": 80.9, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_18:51 measuring runs/chess-50m-12h/ckpt_h04.pt
+{"checkpoint": "ckpt_h04.pt", "minutes": 240.01, "step": 20951, "val_loss": 0.4434, "positions": 1000, "legal_pct": 90.4, "legal_pct_opening": 99.0, "positions_opening": 289, "legal_pct_middle": 86.9, "positions_middle": 481, "legal_pct_late": 87.0, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_18:59 measuring runs/chess-50m-12h/ckpt_h05.pt
+{"checkpoint": "ckpt_h05.pt", "minutes": 300.0, "step": 26169, "val_loss": 0.4176, "positions": 1000, "legal_pct": 93.6, "legal_pct_opening": 98.3, "positions_opening": 289, "legal_pct_middle": 91.3, "positions_middle": 481, "legal_pct_late": 92.6, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_19:07 measuring runs/chess-50m-12h/ckpt_h06.pt
+{"checkpoint": "ckpt_h06.pt", "minutes": 360.01, "step": 31390, "val_loss": 0.4073, "positions": 1000, "legal_pct": 94.5, "legal_pct_opening": 99.0, "positions_opening": 289, "legal_pct_middle": 94.8, "positions_middle": 481, "legal_pct_late": 88.3, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_19:16 measuring runs/chess-50m-12h/ckpt_h07.pt
+{"checkpoint": "ckpt_h07.pt", "minutes": 420.0, "step": 36613, "val_loss": 0.3946, "positions": 1000, "legal_pct": 96.1, "legal_pct_opening": 99.3, "positions_opening": 289, "legal_pct_middle": 95.6, "positions_middle": 481, "legal_pct_late": 93.0, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_19:56 measuring runs/chess-50m-12h/ckpt_h08.pt
+{"checkpoint": "ckpt_h08.pt", "minutes": 480.01, "step": 41836, "val_loss": 0.3862, "positions": 1000, "legal_pct": 96.2, "legal_pct_opening": 100.0, "positions_opening": 289, "legal_pct_middle": 96.0, "positions_middle": 481, "legal_pct_late": 91.7, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_20:57 measuring runs/chess-50m-12h/ckpt_h09.pt
+{"checkpoint": "ckpt_h09.pt", "minutes": 540.01, "step": 47063, "val_loss": 0.3722, "positions": 1000, "legal_pct": 96.3, "legal_pct_opening": 100.0, "positions_opening": 289, "legal_pct_middle": 95.4, "positions_middle": 481, "legal_pct_late": 93.5, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-13_21:01 done
+2026-11-14_02:17 measuring runs/chess-50m-12h/ckpt_h10.pt
+{"checkpoint": "ckpt_h10.pt", "minutes": 600.01, "step": 52296, "val_loss": 0.3737, "positions": 1000, "legal_pct": 96.9, "legal_pct_opening": 99.7, "positions_opening": 289, "legal_pct_middle": 96.9, "positions_middle": 481, "legal_pct_late": 93.5, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-14_03:17 measuring runs/chess-50m-12h/ckpt_h11.pt
+{"checkpoint": "ckpt_h11.pt", "minutes": 660.0, "step": 57525, "val_loss": 0.3656, "positions": 1000, "legal_pct": 97.0, "legal_pct_opening": 99.7, "positions_opening": 289, "legal_pct_middle": 97.1, "positions_middle": 481, "legal_pct_late": 93.5, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-14_11:39 measuring runs/chess-50m-12h/ckpt_h12.pt
+{"checkpoint": "ckpt_h12.pt", "minutes": 720.0, "step": 62755, "val_loss": 0.3631, "positions": 1000, "legal_pct": 98.0, "legal_pct_opening": 100.0, "positions_opening": 289, "legal_pct_middle": 98.5, "positions_middle": 481, "legal_pct_late": 94.3, "positions_late": 230}
+wrote results/legal-chess-50m-12h-p1000.csv
+2026-11-14_11:43 done
